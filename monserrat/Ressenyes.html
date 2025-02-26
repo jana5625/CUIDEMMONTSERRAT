@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESSENYES - CUIDEMONTSERRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #de9ed972 ;
+        }
+        .titol {
+            color: darkmagenta ;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px ;
+        }
+        .text{
+            color: darkmagenta ;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px ;
+        }
+    </style>
+
+<script>
+    function afegirRessenya(tipo) {
+        var nom = document.getElementById("nom-" + tipo).value;
+        var comentari = document.getElementById("comentari-" + tipo).value;
+        var puntuacio = document.getElementById("puntuacio-" + tipo).value;
+        
+        if (nom && comentari && puntuacio) {
+            var novaRessenya = document.createElement("div");
+            novaRessenya.classList.add("bg-white", "p-4", "rounded-lg", "shadow-md", "mt-4");
+            novaRessenya.innerHTML = `
+                <p class="text-yellow-400">${"★".repeat(puntuacio)}${"☆".repeat(5 - puntuacio)}</p>
+                <p class="font-semibold">${nom}</p>
+                <p class="text-gray-600">${comentari}</p>
+            `;
+            document.getElementById("ressenyes-" + tipo).appendChild(novaRessenya);
+            
+            document.getElementById("nom-" + tipo).value = "";
+            document.getElementById("comentari-" + tipo).value = "";
+            document.getElementById("puntuacio-" + tipo).value = "5";
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center text-green-700 mb-6"><div class="titol">RESSENYES DELS NOSTRES PARTICIPANTS</div></h1>
+        
+        <div class="space-y-6">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Marta Solé (Barcelona, 35 anys)</p>
+                <p class="text-gray-600">Una experiència increïble! No només vam ajudar a netejar Montserrat, sinó que també vam aprendre molt sobre la seva flora i fauna.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★☆</p>
+                <p class="font-semibold">Joan Miralles (Terrassa, 42 anys)</p>
+                <p class="text-gray-600">Molt recomanable. La combinació d’educació ambiental i acció real per conservar el medi és perfecte.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Laia Ferrer (Manresa, 29 anys)</p>
+                <p class="text-gray-600">Va ser molt gratificant contribuir a la conservació d’un espai tan especial com Montserrat. L’organització va ser excel·lent!</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★☆☆</p>
+                <p class="font-semibold">Pere Roca (Igualada, 50 anys)</p>
+                <p class="text-gray-600">L'activitat està molt ben organitzada, però crec que caldria més implicació de la comunitat per tenir un impacte encara més gran.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Anna Puig (Vic, 27 anys)</p>
+                <p class="text-gray-600">Fantàstic! Una activitat educativa i alhora molt motivadora. Repetiré segur.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★☆☆</p>
+                <p class="font-semibold">Marc Serra (Badalona, 39 anys)</p>
+                <p class="text-gray-600">Bona iniciativa, però potser caldria millorar la gestió del temps.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Carla Gómez (Reus, 33 anys)</p>
+                <p class="text-gray-600">Un gran dia a la natura! Recomano aquesta experiència a tothom.</p>
+            </div>
+                
+                <h2 class="text">Deixa la teva ressenya</h2>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <input id="nom-participants" type="text" placeholder="El teu nom" class="border p-2 w-full mb-2">
+                    <textarea id="comentari-participants" placeholder="El teu comentari" class="border p-2 w-full mb-2"></textarea>
+                    <select id="puntuacio-participants" class="border p-2 w-full mb-2">
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                    </select>
+                    <button onclick="afegirRessenya('participants')" class="bg-pink-500 text-white px-4 py-2 rounded">Afegir Ressenya</button>
+                </div>
+            <h1 class="text-2xl font-bold text-green-700 mt-6"><div class="titol"><center>RESSENYES D'ESCOLES</center></div></h1>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Escola Montserrat (Sabadell)</p>
+                <p class="text-gray-600">Els nostres alumnes van gaudir moltíssim de les activitats. Han après molt sobre el medi ambient d’una manera divertida i educativa.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★☆</p>
+                <p class="font-semibold">Col·legi Sant Jordi (Barcelona)</p>
+                <p class="text-gray-600">Una experiència molt enriquidora. Els nens van tornar a l’escola amb una nova consciència sobre la importància de cuidar la natura.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Institut Verd (Girona)</p>
+                <p class="text-gray-600">Activitat excel·lent! Tant els professors com els alumnes vam trobar molt interessant la xerrada i l’excursió.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★☆</p>
+                <p class="font-semibold">Escola El Pi (Tarragona)</p>
+                <p class="text-gray-600">Molt bona activitat per sensibilitzar els més joves. Els alumnes es van implicar molt en la recollida de residus.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <p class="text-yellow-400">★★★★★</p>
+                <p class="font-semibold">Escola Natura Viva (Lleida)</p>
+                <p class="text-gray-600">Iniciativa fantàstica! Els alumnes van aprendre mentre gaudien de la natura. Esperem repetir l’experiència aviat.</p>
+            </div>
+        </div>
+        <br>
+        <h2 class="text">Deixa la teva ressenya</h2>
+        <br>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <input id="nom-escoles" type="text" placeholder="Nom de l'escola" class="border p-2 w-full mb-2">
+            <textarea id="comentari-escoles" placeholder="El teu comentari" class="border p-2 w-full mb-2"></textarea>
+            <select id="puntuacio-escoles" class="border p-2 w-full mb-2">
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+            </select>
+            <button onclick="afegirRessenya('escoles')" class="bg-pink-500 text-white px-4 py-2 rounded">Afegir Ressenya</button>
+        </div>
+    </div>
+</body>
+</html>

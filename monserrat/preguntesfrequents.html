@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREGUNTES FREQÜENTS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family:fantasys;
+            background: linear-gradient(to right, #fb8ea0, #f79963);
+            margin: 0;
+            padding: 20px;
+            font-size: 40px;
+            
+        }
+
+        .faq-container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 1px 12px 30px rgba(78, 74, 74, 0.2);
+        }
+
+        .faq-item {
+            border-bottom: 2px solid #ddd;
+            padding: 18px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            background-color: #f7f7f7;
+            border-radius: 5px;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 25px;
+            color: #34495e;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+            color: #000a0b;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 24px;
+            transition: transform 0.3s ease-in-out;
+            color: #e74c3c;
+        }
+
+        .rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="faq-container">
+        <b><h2> PREGUNTES FREQÜENTS ❓</h2></b>
+        
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>📌 Com puc participar en les activitats?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                Pots inscriure’t a través del nostre web o contactar-nos per obtenir més informació sobre les activitats disponibles.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>💰 Quin és el cost de les activitats?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                Les activitats per a nens tenen un cost de 5€, mentre que les activitats per a adults tenen un cost de 8€.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>👶 Puc portar nens a les activitats?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                Sí! Tenim activitats especialment dissenyades per a nens i famílies, amb jocs i aprenentatge sobre la natura.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>🎒 Quin material he de portar?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                Recomanem portar roba còmoda, aigua, protecció solar i una motxilla petita. Nosaltres proporcionem el material necessari per a les activitats.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>🌦️ Què passa si plou?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                En cas de pluja intensa, l'activitat es pot ajornar. T'avisaríem amb antelació en cas de canvis.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>🚶‍♂️ Cal tenir experiència prèvia en senderisme?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                No! Les nostres activitats estan adaptades a tots els nivells, tant per a principiants com per a persones acostumades a caminar per la muntanya.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+                <span>📅 Quan es fan les activitats?</span>
+                <span class="icon">➕</span>
+            </div>
+            <div class="faq-answer">
+                Organitzem activitats durant tot l'any. Pots consultar el calendari al nostre web per veure les dates disponibles.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const icon = element.querySelector('.icon');
+
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.textContent = '➕';
+            } else {
+                answer.style.display = 'block';
+                icon.textContent = '➖';
+            }
+        }
+    </script>
+
+</body>
+</html>
